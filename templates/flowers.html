@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/flowers.css') }}">
+    <style>
+        .glowing-text {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Dancing Script', cursive;
+            font-size: 36px;
+            color: #ff6f91;
+            text-shadow: 0 0 5px #ff6f91, 0 0 10px #ff6f91, 0 0 20px #ff6f91, 0 0 30px #ff9a9e, 0 0 40px #ff9a9e;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .glowing-message {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+            color: #ff9a9e;
+            text-shadow: 0 0 5px #ff9a9e, 0 0 10px #ff9a9e, 0 0 15px #ff9a9e, 0 0 20px #ffb3c1, 0 0 25px #ffb3c1;
+            animation: glow 1.5s infinite alternate;
+            text-align: center;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #ff6f91, 0 0 10px #ff6f91, 0 0 20px #ff6f91, 0 0 30px #ff9a9e, 0 0 40px #ff9a9e;
+            }
+            to {
+                text-shadow: 0 0 10px #ff6f91, 0 0 20px #ff6f91, 0 0 30px #ff9a9e, 0 0 50px #ff9a9e, 0 0 60px #ff9a9e;
+            }
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #ccc;
+            color: #333;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 1000; /* Ensure the back button stays on top */
+        }
+        .back-btn:hover {
+            background: #bbb;
+            transform: scale(1.05);
+        }
+        .back-btn::before {
+            content: '←';
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body class="not-loaded">
+    <button onclick="window.location.href='/menu'" class="back-btn">Back</button>
+    <div class="glowing-text">Flowers for You</div>
+    <div class="glowing-message">
+        Let me give you these flowers digitally.<br>
+        Someday when we meet, I'll provide the real one. Huhu.<br>
+        Always take care.
+    </div>
+    <div class="flower">
+        <div class="f-wrapper">
+            <div class="flower__line"></div>
+            <div class="f">
+                <div class="flower__leaf flower__leaf--1"></div>
+                <div class="flower__leaf flower__leaf--2"></div>
+                <div class="flower__leaf flower__leaf--3"></div>
+                <div class="flower__leaf flower__leaf--4"></div>
+                <div class="flower__leaf flower__leaf--5"></div>
+                <div class="flower__leaf flower__leaf--6"></div>
+                <div class="flower__leaf flower__leaf--7"></div>
+                <div class="flower__leaf flower__leaf--8 flower__fall-down--yellow"></div>
+            </div>
+        </div>
+
+        <div class="f-wrapper f-wrapper--2">
+            <div class="flower__line"></div>
+            <div class="f">
+                <div class="flower__leaf flower__leaf--1"></div>
+                <div class="flower__leaf flower__leaf--2"></div>
+                <div class="flower__leaf flower__leaf--3"></div>
+                <div class="flower__leaf flower__leaf--4"></div>
+                <div class="flower__leaf flower__leaf--5"></div>
+                <div class="flower__leaf flower__leaf--6"></div>
+                <div class="flower__leaf flower__leaf--7"></div>
+                <div class="flower__leaf flower__leaf--8 flower__fall-down--pink"></div>
+            </div>
+        </div>
+
+        <div class="f-wrapper f-wrapper--3">
+            <div class="flower__line"></div>
+            <div class="f">
+                <div class="flower__leaf flower__leaf--1"></div>
+                <div class="flower__leaf flower__leaf--2"></div>
+                <div class="flower__leaf flower__leaf--3"></div>
+                <div class="flower__leaf flower__leaf--4"></div>
+                <div class="flower__leaf flower__leaf--5"></div>
+                <div class="flower__leaf flower__leaf--6"></div>
+                <div class="flower__leaf flower__leaf--7"></div>
+                <div class="flower__leaf flower__leaf--8 flower__fall-down--purple"></div>
+            </div>
+        </div>
+        <div class="flower__glass"></div>
+    </div>
+</body>
+</html>
+

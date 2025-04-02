@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/puzzle_game.css') }}">
+    <style>
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #ccc;
+            color: #333;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .back-btn:hover {
+            background: #bbb;
+            transform: scale(1.05);
+        }
+        .back-btn::before {
+            content: '←';
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="window.location.href='/menu'" class="back-btn">Back</button>
+    <div class="puzzle-container">
+        <h1>Drag and Drop Puzzle Game</h1>
+        <div class="puzzle-board">
+            <div class="drop-zone" data-piece="1"></div>
+            <div class="drop-zone" data-piece="2"></div>
+            <div class="drop-zone" data-piece="3"></div>
+            <div class="drop-zone" data-piece="4"></div>
+        </div>
+        <div class="puzzle-pieces" id="puzzle-pieces"></div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts/puzzle_game.js') }}"></script>
+</body>
+</html>

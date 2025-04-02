@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talking Stage Q&A</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff4d6d;
+            margin-bottom: 20px;
+            font-size: 28px; /* Adjusted for better proportion */
+        }
+        .question {
+            text-align: left;
+            font-size: 16px;
+            margin: 15px 0 5px;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ff4d6d;
+            border-radius: 10px;
+            outline: none;
+            font-size: 14px;
+            box-sizing: border-box; /* Ensure proper alignment */
+        }
+        .submit-btn {
+            background: #ff4d6d;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .submit-btn:hover {
+            background: #e63950;
+            transform: scale(1.05);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Add consistent spacing between elements */
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #ccc;
+            color: #333;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .back-btn:hover {
+            background: #bbb;
+            transform: scale(1.05);
+        }
+        .back-btn::before {
+            content: '←';
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="window.location.href='/menu'" class="back-btn">Back</button>
+    <div class="container">
+        <h2>Talking Stage Q&A 💌</h2>
+        <form action="{{ url_for('qa') }}" method="post">
+            <label class="question">🌸 If someone gaves you flowers what kind of flowers would it be?</label>
+            <input type="text" name="flower" placeholder="Type your answer..." required>
+            
+            <label class="question">🍕 What's your favorite food?</label>
+            <input type="text" name="food" placeholder="Type your answer..." required>
+            
+            <label class="question">🎶 If there is one thing you want to go to where would it be?</label>
+            <input type="text" name="music" placeholder="Type your answer..." required>
+            
+            <label class="question">💖 What's your love language?</label>
+            <input type="text" name="love_language" placeholder="Type your answer..." required>
+            
+            <button type="submit" class="submit-btn">Submit Answers</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: "Courier New", Courier, monospace;
+            zoom: 90%; /* Set the zoom level to 90% */
+        }
+
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="center-content">
+        <div class="typewriter">
+            <h2>Are you ready to see the program?</h2>
+        </div>
+        <div class="button-container">
+            <button onclick="fadeAndRedirect()">Yes</button>
+            <button onclick="fadeAndRedirect()">Yes</button>
+        </div>
+    </div>
+    <script>
+        function fadeAndRedirect() {
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = "{{ url_for('login') }}";
+            }, 500); // Match the duration of the fade-out animation
+        }
+    </script>
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+</body>
+</html>
